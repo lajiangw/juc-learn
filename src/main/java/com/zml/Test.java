@@ -7,23 +7,18 @@ package com.zml;
  */
 public class Test {
     public static void main(String[] args) {
+        Thread thread = new Thread(() -> {
+            System.out.println("开始运转t1");
+            while (true) {
 
-        Thread thread = new Thread(() -> System.out.println("123"));
-        thread.start();
-    }
-}
-
-class Cat implements Runnable {
-
-    @Override
-    public void run() {
-        while (true) {
-            System.out.println("我是小猫~");
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
             }
-        }
+        });
+//        判断这个线程是否是守护线程
+        thread.setDaemon(true);
+        System.out.println(thread.getName()+thread.isDaemon());
+        thread.start();
+        System.out.println("main线程结束~");
     }
 }
+
+
