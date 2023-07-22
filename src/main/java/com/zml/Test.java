@@ -9,9 +9,6 @@ public class Test {
     public static void main(String[] args) {
         Thread thread = new Thread(() -> {
             System.out.println("开始运转t1");
-            while (true) {
-
-            }
         });
 //        判断这个线程是否是守护线程
         thread.setDaemon(true);
