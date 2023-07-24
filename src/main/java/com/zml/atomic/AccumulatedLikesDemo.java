@@ -94,7 +94,7 @@ class ClickNumber {
         atomicLong.getAndIncrement();
     }
 
-    public void clickByLongAdder() {
+    public  void clickByLongAdder() {
         longAdder.increment();
     }
 
